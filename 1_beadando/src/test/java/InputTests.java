@@ -1,16 +1,21 @@
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.io.FileNotFoundException;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class InputTests {
 
     @ParameterizedTest
-    @ValueSource (doubles = 1.5)
+    @ValueSource(doubles = 1.5)
     public void pointTest(Double a){
         Point point = new Point(a, a);
         assertEquals(a, point.getX());
+        assertEquals(a, point.getY());
     }
     @ParameterizedTest
     @ValueSource (doubles = {-1,0})
@@ -23,7 +28,7 @@ public class InputTests {
     @ValueSource (doubles = {0.1,100})
     public void circlePositiveTest(Double a){
         Circle circle = new Circle(new Point(1.5, -1.5),a);
-        assertEquals(a, circle.getSugar());
+        assertEquals(a, circle.getradius());
     }
     @ParameterizedTest
     @ValueSource (doubles = {-1,0})
@@ -63,5 +68,25 @@ public class InputTests {
     public void hexagonPositiveTest(Double a){
         Hexagon hexagon = new Hexagon(new Point(1.5, 1.5),a);
         assertEquals(a, hexagon.getSide());
+    }
+
+    @Test
+    public void reactangleNullInputTest(){
+         assertThrows(FileNotFoundException.class, () -> new Rectangle("nothing.txt"));
+    }
+    @Test
+    public void reactangleWrongShapeInputTest(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Rectangle("src/main/resources/wrongShape.txt"));
+        String message = "Only the following planes are acceptable: triangle, square,circle,hexagon";
+        assertEquals(message, exception.getMessage());
+    }
+
+    @Test
+    public void reactangleInputTest() throws FileNotFoundException {
+        Rectangle rectangle = new Rectangle("src/main/resources/circle.txt");
+        assertEquals(6.2, rectangle.getMaxX());
+        assertEquals(8., rectangle.getMaxY());
+        assertEquals(-3.8, rectangle.getMinX() );
+        assertEquals(-2, rectangle.getMinY());
     }
 }

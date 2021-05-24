@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project and Libraries" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45da5988-56d7-445c-bac4-a9ae651e477d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/Elte-4fv-ProgramozasiTechnologia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1_beadando.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InputTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/OutputTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/circle.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/circle3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hexagonAndSquare.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/square1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/triangleAndSquare.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/wrongShape.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClassDiagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/ClassDiagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hexagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hexagon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PlaneFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PlaneFigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InputTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InputTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/OutputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/OutputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Hexagon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Hexagon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PlaneFigure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PlaneFigure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/InputTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/InputTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/OutputTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/OutputTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/umldiagram.zargo" beforeDir="false" afterPath="$PROJECT_DIR$/umldiagram.zargo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Elte-4fv-Halad-Java-/gyak5" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,21 +83,17 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-ProgramozasiTechnologia\1_beadando\src\main\resources" />
+      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-ProgramozasiTechnologia\1_beadando\src\main" />
+      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-ProgramozasiTechnologia\1_beadando\src\test\java" />
+      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-ProgramozasiTechnologia\1_beadando\src\main\java" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.All in 1_beadando (5)">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in 1_beadando (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="1_beadando" />
       <option name="PACKAGE_NAME" value="" />
@@ -143,7 +153,10 @@
       <option name="presentableId" value="Default" />
       <updated>1615318139212</updated>
       <workItem from="1615318140325" duration="8740000" />
-      <workItem from="1615326975818" duration="4216000" />
+      <workItem from="1615326975818" duration="7027000" />
+      <workItem from="1615358165093" duration="23991000" />
+      <workItem from="1615386495601" duration="3044000" />
+      <workItem from="1615488530727" duration="686000" />
     </task>
     <servers />
   </component>
@@ -167,12 +180,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Circle.java</url>
-          <line>25</line>
+          <line>30</line>
           <properties class="Circle" method="getMinY">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="27" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

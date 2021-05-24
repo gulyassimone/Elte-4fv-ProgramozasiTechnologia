@@ -1,3 +1,6 @@
+/**
+ * This class implements a hexagon represented by the center of the shape and a side
+ */
 public class Hexagon extends Triangle {
 
   public Hexagon(Point center, Double side) {

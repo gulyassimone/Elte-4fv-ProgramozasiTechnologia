@@ -1,11 +1,19 @@
+/**
+ * This class implements a square represented by the center of the shape and a side
+ */
 public class Square extends PlaneFigure {
 
   protected Double side;
+
 
   public Square(Point center, Double side) {
     super(center);
     if(side <=0 ) throw new IllegalArgumentException("The side cannot be less than or equal to zero!");
     this.side = side;
+  }
+
+  protected Square() {
+    super();
   }
 
   public Double getSide() {
@@ -20,20 +28,24 @@ public class Square extends PlaneFigure {
             '}';
   }
 
+
   @Override
   public Double getMinX() {
   return (center.x - side / 2);
   }
+
 
   @Override
   public Double getMaxX() {
   return (center.x + side / 2);
   }
 
+
   @Override
   public Double getMinY() {
     return (center.y - side / 2);
   }
+
 
   @Override
   public Double getMaxY() {

@@ -1,5 +1,6 @@
-
-
+/**
+ * This class implements a triangle represented by the center of the shape and a side
+ */
 public class Triangle extends Square {
 
   protected Double height;
