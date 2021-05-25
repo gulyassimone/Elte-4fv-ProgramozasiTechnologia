@@ -1,0 +1,12 @@
+hu\elte\view\Main.class
+hu\elte\entity\Coordinate.class
+hu\elte\entity\Board$1.class
+hu\elte\entity\Direction.class
+hu\elte\entity\Stone.class
+hu\elte\entity\HighScore.class
+hu\elte\entity\Board.class
+hu\elte\view\KeyListener.class
+hu\elte\entity\Snake.class
+hu\elte\view\DrawArea.class
+hu\elte\view\HighScoreManager.class
+hu\elte\entity\Food.class

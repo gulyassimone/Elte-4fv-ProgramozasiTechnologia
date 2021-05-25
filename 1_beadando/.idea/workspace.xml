@@ -9,6 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45da5988-56d7-445c-bac4-a9ae651e477d" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/resources/circle.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/circle3.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/hexagonAndSquare.txt" afterDir="false" />
@@ -39,6 +40,10 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/InputTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/InputTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/OutputTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/OutputTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/umldiagram.zargo" beforeDir="false" afterPath="$PROJECT_DIR$/umldiagram.zargo" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> ace992451e7b0871b8ad56d51751c77727c32799
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +67,13 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1pX8aEUIlh5w11eUn7KPYwXvGuk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -94,6 +106,20 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in 1_beadando (5)">
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> ace992451e7b0871b8ad56d51751c77727c32799
     <configuration name="All in 1_beadando (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="1_beadando" />
       <option name="PACKAGE_NAME" value="" />
@@ -153,10 +179,15 @@
       <option name="presentableId" value="Default" />
       <updated>1615318139212</updated>
       <workItem from="1615318140325" duration="8740000" />
+<<<<<<< HEAD
       <workItem from="1615326975818" duration="7027000" />
       <workItem from="1615358165093" duration="23991000" />
       <workItem from="1615386495601" duration="3044000" />
       <workItem from="1615488530727" duration="686000" />
+=======
+      <workItem from="1615326975818" duration="4216000" />
+      <workItem from="1615332193597" duration="253000" />
+>>>>>>> ace992451e7b0871b8ad56d51751c77727c32799
     </task>
     <servers />
   </component>
