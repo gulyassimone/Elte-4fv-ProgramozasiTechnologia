@@ -7,36 +7,57 @@ package hu.elte.entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.Objects;
 import java.util.Random;
 
 /**
- *
  * @author Simone Gulyas
  */
-public class Food {
-    private Coordinate food;
-    private int size;
+public class Food extends GameObject {
 
-    public Food(int size) {
-        this.size = size;
-        food = new Coordinate(0,0);
+    private Coordinate coordinate;
+
+    public Food(Field[][] table, int size, int scale) {
+        super(table, size,scale);
+        randomizeLocate();
     }
 
-    public Coordinate getFood() {
-        return food;
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
-    
-    public void draw(Graphics2D g2){
+
+    @Override
+    public void draw(Graphics2D g2) {
         g2.setColor(Color.RED);
-        g2.fillOval(food.getX(), food.getY(), 10, 10);
+        g2.fillOval(coordinate.getX() *scale, coordinate.getY()*scale, scale, scale);
     }
-    
-    public void randomizeLocate(){
-        Random rand = new Random();
-        int randX = rand.nextInt(size);
-        int randY = rand.nextInt(size);
-        food.setX(randX);
-        food.setY(randY);
+
+    @Override
+    public void randomizeLocate() {
+        do {
+            Random rand = new Random();
+            int randX = rand.nextInt(size);
+            int randY = rand.nextInt(size);
+            if (coordinate == null) {
+                coordinate = new Coordinate(randX, randY);
+            } else {
+                coordinate.setX(randX);
+                coordinate.setY(randY);
+            }
+        } while (!setTable(coordinate, this));
     }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Food food = (Food) o;
+        return Objects.equals(coordinate, food.coordinate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), coordinate);
+    }
 }

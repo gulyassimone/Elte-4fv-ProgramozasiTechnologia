@@ -10,22 +10,19 @@ package hu.elte.entity;
  * @author gulya
  */
 public enum Direction {
-    UP(0, -10), DOWN(0, 10), LEFT(-10, 0),  RIGHT(10, 0);
+    UP(0, -1), DOWN(0, 1), LEFT(-1, 0),  RIGHT(1, 0);
     
-    public int x, y;
-    private Direction end;
+    Coordinate coordinate;
+    Direction invalidWay;
     
     Direction(int x, int y){
-        this.x = x;
-        this.y = y;
+        coordinate = new Coordinate(x,y);
     }
     
-    static{
-        UP.end = DOWN;
-        DOWN.end = UP;
-        LEFT.end = RIGHT;
-        RIGHT.end = LEFT;
+    static {
+        UP.invalidWay = DOWN;
+        DOWN.invalidWay = UP;
+        LEFT.invalidWay = RIGHT;
+        RIGHT.invalidWay = LEFT;
     }
-    
-    
 }

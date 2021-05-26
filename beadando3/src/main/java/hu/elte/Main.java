@@ -1,11 +1,10 @@
-package hu.elte.view;
+package hu.elte;
 
 import hu.elte.entity.Board;
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) {
         Board board = new Board();
         
         

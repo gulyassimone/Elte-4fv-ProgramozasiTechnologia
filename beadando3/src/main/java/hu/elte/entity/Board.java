@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 package hu.elte.entity;
-import hu.elte.entity.Food;
-import hu.elte.entity.Snake;
 import hu.elte.view.DrawArea;
-import hu.elte.view.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.Timer;
 
 /**
@@ -24,13 +24,26 @@ import javax.swing.Timer;
  */
 
 
-public class Board{
-    int DIMENSION = 300;
+public class Board {
+    int DIMENSION = 30;
+    private Field[][] table;
     private JFrame frame;    
-    //private final Timer timer;
-    
+    public final Timer timer;
+    private Snake snake;
+    private Food food;
+    private Stone stone;
+    private final int scale = 10;
+    private final int fps = 300;
     
     public Board(){
+
+        table = new Field[DIMENSION][DIMENSION];
+        for (int i = 0; i < DIMENSION; ++i) {
+            for (int j = 0; j < DIMENSION; ++j) {
+                table[i][j] = new Field(new Coordinate(i,j));
+            }
+        }
+
         frame = new JFrame("Snake");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -47,19 +60,33 @@ public class Board{
        // createGameScore(menuScore);
         
         frame.setJMenuBar(menuBar);
-        
-        Snake snake = new Snake(DIMENSION);
-        Food food = new Food(DIMENSION);
-        DrawArea drawArea = new DrawArea(snake , food);
-        drawArea.setPreferredSize(new Dimension(DIMENSION,DIMENSION));
-        frame.getContentPane().add(BorderLayout.CENTER, drawArea);     
-      //  frame.addKeyListener(new KeyListener());
-  /*      setBackground(Color.black);
-        setFocusable(true);
 
-        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
-        loadImages();
-        initGame();*/
+
+        snake = new Snake(table,DIMENSION, scale);
+        stone = new Stone(table,DIMENSION,scale);
+        food = new Food(table,DIMENSION,scale);
+
+        frame.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent key) {
+                if ((key.getKeyCode() == KeyEvent.VK_LEFT) && (snake.getDirection().invalidWay != Direction.LEFT)) {
+                    snake.setDirection(Direction.LEFT);
+                }else if ((key.getKeyCode() == KeyEvent.VK_RIGHT) && (snake.getDirection().invalidWay != Direction.RIGHT))  {
+                    snake.setDirection(Direction.RIGHT);
+                }else if ((key.getKeyCode() == KeyEvent.VK_UP) && (snake.getDirection().invalidWay != Direction.UP))  {
+                    snake.setDirection(Direction.UP);
+                }else if ((key.getKeyCode() == KeyEvent.VK_DOWN) && (snake.getDirection().invalidWay != Direction.DOWN))  {
+                    snake.setDirection(Direction.DOWN);
+                }
+            }
+        });
+
+        DrawArea drawArea = new DrawArea(snake , food, stone, this);
+        drawArea.setPreferredSize(new Dimension(DIMENSION*scale,DIMENSION*scale));
+        frame.getContentPane().add(BorderLayout.CENTER, drawArea);
+
+        frame.setFocusable(true);
+
   
         JMenuItem exitMenuItem = new JMenuItem("Exit");
         gameMenu.add(exitMenuItem);
@@ -70,7 +97,7 @@ public class Board{
             }
         });
         
-     /*   timer = new Timer(30, new ActionListener() {
+       timer = new Timer(fps, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 Dimension d = drawArea.getSize();
@@ -80,9 +107,21 @@ public class Board{
         });
         
         
-        timer.start();*/
+        timer.start();
         frame.pack();
         frame.setVisible(true);
     }
+    public void end(){
+        timer.stop();
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public Snake getSnake() {
+        return snake;
+    }
+
 }
     

@@ -11,50 +11,57 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 import hu.elte.entity.HighScore;
 
 public class HighScoreManager {
 
-    private final int maxScores;
+    private final int maxScores = 10;
 
-    private final PreparedStatement insertStatement;
-    private final PreparedStatement deleteStatement;
-    private final Connection connection;
+    private  PreparedStatement insertStatement;
+    private  PreparedStatement deleteStatement;
+    private  Connection connection;
 
-    public HighScoreManager(int maxScores) throws SQLException {
-        this.maxScores = maxScores;
+    public HighScoreManager() {
 
-        String dbURL = "jdbc:mysql://localhost:3306/highscores?createDatabaseIfNotExist=true&serverTimezone=UTC";
-        connection = DriverManager.getConnection(dbURL, "root", "1234");
+        try {
+            String dbURL = "jdbc:mysql://localhost:3306/highscores?createDatabaseIfNotExist=true&serverTimezone=UTC";
+            connection = DriverManager.getConnection(dbURL, "root", "1234");
 
-        String insertQuery = "INSERT INTO HIGHSCORES (TIMESTAMP, NAME, SCORE) VALUES (?, ?, ?)";
-        insertStatement = connection.prepareStatement(insertQuery);
+            String insertQuery = "INSERT INTO HIGHSCORES (TIMESTAMP, NAME, SCORE) VALUES (?, ?, ?)";
+            insertStatement = connection.prepareStatement(insertQuery);
 
-        String deleteQuery = "DELETE FROM HIGHSCORES WHERE SCORE=?";
-        deleteStatement = connection.prepareStatement(deleteQuery);
+            String deleteQuery = "DELETE FROM HIGHSCORES WHERE SCORE=?";
+            deleteStatement = connection.prepareStatement(deleteQuery);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
-    public List<HighScore> getSortedHighScores() throws SQLException {
+    public List<HighScore> getSortedHighScores() {
         String query = "SELECT * FROM HIGHSCORES";
         List<HighScore> highScores = new ArrayList<>();
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet results = stmt.executeQuery(query);
 
-        Statement stmt = connection.createStatement();
-        ResultSet results = stmt.executeQuery(query);
+            while (results.next()) {
+                String name = results.getString("NAME");
+                int score = results.getInt("SCORE");
+                highScores.add(new HighScore(name, score));
+            }
 
-        while (results.next()) {
-            String name = results.getString("NAME");
-            int score = results.getInt("SCORE");
-            highScores.add(new HighScore(name, score));
+            sortHighScores(highScores);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-
-        sortHighScores(highScores);
         return highScores;
     }
 
-    public void putHighScore(String name, int score) throws SQLException {
+    public void putHighScore(String name, int score) {
         List<HighScore> highScores = getSortedHighScores();
-
         if (highScores.size() < maxScores) {    // high score board is full
+
             insertScore(name, score);
         } else {
             int leastScore = highScores.get(highScores.size() - 1).getScore();
@@ -71,17 +78,21 @@ public class HighScoreManager {
      * @param highScores
      */
     private void sortHighScores(List<HighScore> highScores) {
+
         Collections.sort(highScores, Comparator.comparing(HighScore::getScore).reversed());
     }
 
-    private void insertScore(String name, int score) throws SQLException {
+    private void insertScore(String name, int score) {
         Timestamp ts = new Timestamp(System.currentTimeMillis());
+        try {
+            insertStatement.setTimestamp(1, ts);
+            insertStatement.setString(2, name);
+            insertStatement.setInt(3, score);
 
-        insertStatement.setTimestamp(1, ts);
-        insertStatement.setString(2, name);
-        insertStatement.setInt(3, score);
-
-        insertStatement.executeUpdate();
+            insertStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     /**
@@ -89,8 +100,12 @@ public class HighScoreManager {
      *
      * @param score
      */
-    private void deleteScores(int score) throws SQLException {
-        deleteStatement.setInt(1, score);
-        deleteStatement.executeUpdate();
+    private void deleteScores(int score) {
+        try {
+            deleteStatement.setInt(1, score);
+            deleteStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
