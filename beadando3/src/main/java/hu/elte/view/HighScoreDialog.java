@@ -1,28 +1,28 @@
 package hu.elte.view;
 
+import hu.elte.entity.HighScore;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import java.util.List;
 
 public class HighScoreDialog extends JDialog {
 
-    public HighScoreDialog(JFrame frame, String name ) {
-        super(frame, name);
-        JButton closeIt = new JButton("OK");
-        closeIt.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Closing dialog");
-                dispose();
-            }
-        });
-        getContentPane().add(closeIt, BorderLayout.SOUTH);
+    public HighScoreDialog(JFrame frame, String name , List<HighScore> result) {
+        super(frame, name, true);
+        JPanel p = new JPanel();
+
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        pack();
-        getContentPane().add(new JLabel("Placeholder label"));
-        pack();
-        setSize(200, 200);
-        setVisible(true);
+        for(HighScore score: result) {
+            JTextField textfield = new JTextField(25);
+            p.add(textfield);
+            textfield.setText(String.valueOf(score));
+            add(p);
+            pack();
+        }
+
+        setSize(400, 400);
         setVisible(true);
     }
 }

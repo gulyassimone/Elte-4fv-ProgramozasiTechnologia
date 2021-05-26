@@ -1,11 +1,11 @@
 package hu.elte;
 
-import hu.elte.entity.Board;
+import hu.elte.view.Game;
 
 public class Main {
 
     public static void main(String[] args) {
-        Board board = new Board();
+        Game game = new Game();
         
         
   /*      String[] names = new String[]{"Peter", "Adrienne", "Ethan", "Jane", "Paul", "Geoffrey", "Joe", "Laura"};

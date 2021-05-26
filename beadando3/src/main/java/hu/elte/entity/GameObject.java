@@ -1,7 +1,6 @@
 package hu.elte.entity;
 
 import java.awt.*;
-import java.util.Objects;
 
 public abstract class GameObject {
 

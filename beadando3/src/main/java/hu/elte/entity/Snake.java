@@ -27,8 +27,8 @@ public class Snake extends GameObject {
         randomizeLocate();
 
         body = new ArrayList<>();
-        for(int i = 0; i<14; ++i){
-            Coordinate head = new Coordinate(size / 2, size / 2+i);
+        for(int i = 0; i<2; ++i){
+            Coordinate head = new Coordinate(size / 2 - i * direction.coordinate.getX(), size / 2 - i * direction.coordinate.getY());
             body.add(head);
             setTable(head, this);
         }
@@ -107,7 +107,9 @@ public class Snake extends GameObject {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-
+    public void clearEnd(){
+        end = null;
+    }
 
 
     @Override

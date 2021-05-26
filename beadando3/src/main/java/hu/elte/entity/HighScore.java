@@ -20,7 +20,7 @@ public class HighScore {
 
     @Override
     public String toString() {
-        return "HighScore{" + "name=" + name + ", score=" + score + '}';
+        return  "name=" + name + ", score=" + score;
     }
 
 }

@@ -40,7 +40,7 @@ public class DrawArea extends JPanel {
         food.draw(g2);
         stone.draw(g2);
 
-        if(snake.getEnd()){
+        if(snake.getEnd()!=null && snake.getEnd()){
             System.out.println("Vége");
             board.end();
             dialog = new EndGameDialog(null, "Enter Your Name", board.getSnake().getBody().size());
