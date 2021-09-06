@@ -6,7 +6,6 @@
 package hu.elte.entity;
 
 import java.awt.*;
-import java.lang.ref.Reference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

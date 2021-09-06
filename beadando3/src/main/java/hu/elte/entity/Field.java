@@ -15,14 +15,6 @@ public class Field {
         this.gameObject = gameObject;
     }
 
-    public Coordinate getPosition() {
-        return position;
-    }
-
-    public GameObject getGameObject() {
-        return gameObject;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

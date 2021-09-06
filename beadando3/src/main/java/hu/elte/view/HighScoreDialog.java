@@ -3,7 +3,6 @@ package hu.elte.view;
 import hu.elte.entity.HighScore;
 
 import javax.swing.*;
-import java.awt.*;
 
 import java.util.List;
 
